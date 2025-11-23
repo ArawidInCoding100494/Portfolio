@@ -1,4 +1,6 @@
-import React from "react";
+
+
+
 import photo from "../../../public/images/photo.jpg";
 import akaM from "../../../public/images/akaM.png";
 import articles from "../../../public/images/articles.jpg";
@@ -77,7 +79,7 @@ const Home = () => {
 
             <div className="main-btns relative group inline-block">
               <a
-                href="../../../public/Abdurashid Abdumajidov.pdf"
+                href="/abdurashid.pdf"
                 download
                 className="border rounded-xl py-1 px-5 mt-4 cursor-pointer hover:bg-slate-500 capitalize "
               >
