@@ -23,15 +23,21 @@ const Home = () => {
         via-slate-400 
         to-slate-700 
         text-white
+        overflow-hidden
         "
       >
-        <header className=" fixed top-0 left-0 w-full z-30 bg-slate-500 ">
-          <div className="flex justify-between py-2.5 capitalize font-bold text-2xl container">
+        <header className=" fixed top-0 left-0 w-full z-30 bg-slate-500 sm:px-15 ">
+
+          <div className="
+          text-center 
+          sm:flex justify-between py-2.5 capitalize font-bold text-2xl container">
+
             <div className="left">
-              <h2>abdurashid.dev</h2>
+              <h2 className="sm:text-3xl">abdurashid.dev</h2>
             </div>
-            <div className="right w-1/2 ">
-              <nav className="  flex justify-between">
+
+            <div className="right hidden sm:block  w-1/2 ">
+              <nav className=" flex justify-between">
                 <a href="#hero">Home</a>
                 <a href="#about">About</a>
                 <a href="#myProjects">projects</a>
@@ -42,8 +48,8 @@ const Home = () => {
         </header>
 
         <main className="container py-8">
-          <section
-            id="hero"
+
+          <section id="hero"
             className="hero 
                 flex 
                 flex-col
@@ -52,15 +58,18 @@ const Home = () => {
                 h-dvh
                     "
           >
-            <h1 className="capitalize font-bold text-5xl mt-5">
+            <h1 className="capitalize font-bold text-5xl mt-5 text-center">
               frontend developer
             </h1>
 
-            <h2 className="capitalize font-bold text-4xl my-7 text-slate-900">
+            <h2 className="capitalize font-bold text-4xl my-7 text-slate-900 text-center">
               abdumajidov abdurashid
             </h2>
 
-            <p className=" w-1/2 py-3 text-center text-2xl">
+            <p className="  
+            p-3 text-center text-[15px] mb-3 
+            sm:w-[55%] text-[18px]
+            ">
               I’m Abdurashid, a frontend developer focused on building modern
               and responsive web applications. Check out my projects below or
               get in touch to collaborate.
@@ -70,7 +79,7 @@ const Home = () => {
               <a
                 href="../../../public/Abdurashid Abdumajidov.pdf"
                 download
-                className="border rounded-2xl py-2 px-5 mt-4 cursor-pointer hover:bg-slate-500 capitalize "
+                className="border rounded-xl py-1 px-5 mt-4 cursor-pointer hover:bg-slate-500 capitalize "
               >
                 my cv
               </a>
@@ -82,20 +91,28 @@ const Home = () => {
             </div>
           </section>
 
-          <section
-            id="about"
-            className="about  pt-20  pb-5 flex items-center justify-between "
-          >
+          <section id="about"
+            className="about 
+            flex-col items-center
+             sm:flex flex-row
+          ">
             <div className="left  w-full p-3">
-              <h3 className="capitalize my-3 font-bold text-2xl">about me</h3>
-              <p className="my-3 ">
+              <h3 className="capitalize my-3 font-bold text-3xl">about me</h3>
+
+              <p className="
+              my-4 py-2 text-[14px] 
+              sm:text-[18px]
+              ">
                 I'm a passionate Frontend Developer with a strong foundation in
                 HTML, CSS, JavaScript, TypeScript, React, and Next.js. I love
                 building clean, fast, and user-friendly web applications that
                 deliver great digital experiences.
               </p>
 
-              <p className="my-3 ">
+              <p className="
+              my-4 text-[14px]
+              sm:text-[18px]
+              ">
                 With experience in team leadership and a focus on both code
                 quality and design aesthetics, I bring a balanced approach to
                 every project. I specialize in crafting responsive interfaces,
@@ -104,7 +121,7 @@ const Home = () => {
               </p>
 
               <div className="skils my-2 capitalize ">
-                <h3 className=" font-bold pt-3 text-slate-800">my skills</h3>
+                <h3 className=" text-2xl font-bold pt-3 ">my skills</h3>
 
                 <div className="skillsPrasents my-2.5 ">
                   <div className="up text-slate-800 flex items-center justify-between">
@@ -168,13 +185,18 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="right   h-full w-full flex justify-center">
-              <img className="rounded-3xl w-120  h-125 " src={photo} alt="" />
+            <div className="right mt-5  h-full w-full flex justify-center">
+              <img className="
+              rounded-3xl w-80 
+              sm:w-110 
+              " src={photo} alt="" />
             </div>
           </section>
 
-          <section id="myProjects" className=" h-full py-8 ">
-            <h1 className=" text-center capitalize font-bold text-3xl  pt-25 ">
+          <section id="myProjects" 
+          className=" h-full  py-5 ">
+
+            <h1 className=" text-center capitalize font-bold text-3xl pt-10 ">
               my projects
             </h1>
 
@@ -183,9 +205,12 @@ const Home = () => {
               technologies.
             </p>
 
-            <div className="cards  h-full p-3  mt-5  grid grid-cols-3 gap-2.5 ">
-              <a
-                className="card 
+            <div className="cards  
+            h-full p-3  mt-5  grid grid-cols-1 gap-2.5 
+            sm:grid-cols-3
+            ">
+
+              <a className="card 
             border 
             border-slate-500 
             rounded-2xl
@@ -193,6 +218,7 @@ const Home = () => {
             relative 
             group 
             inline-block 
+            my-3
             "
                 href="https://aka-market5.vercel.app/"
                 target="_blank"
@@ -250,8 +276,7 @@ const Home = () => {
                 </div>
               </a>
 
-              <a
-                className="card 
+              <a className="card 
             border 
             border-slate-500 
             rounded-2xl
@@ -259,6 +284,7 @@ const Home = () => {
             relative 
             group 
             inline-block 
+            my-3
             "
                 href="https://articles-sigma.vercel.app/"
                 target="_blank"
@@ -315,15 +341,15 @@ const Home = () => {
                 </div>
               </a>
 
-              <a
-                className="card 
+              <a className="card 
             border 
             border-slate-500 
             rounded-2xl
             cursor-pointer 
             relative 
             group 
-            inline-block 
+            inline-block
+            my-3 
             "
                 href="https://create-user-cards.vercel.app/"
                 target="_blank"
@@ -381,15 +407,15 @@ const Home = () => {
                 </div>
               </a>
 
-              <a
-                className="card 
+              <a className="card 
             border 
             border-slate-500 
             rounded-2xl
             cursor-pointer 
             relative 
             group 
-            inline-block 
+            inline-block
+            my-3 
             "
                 href="https://oner-market.vercel.app/"
                 target="_blank"
@@ -515,30 +541,38 @@ const Home = () => {
             </div>
           </section>
 
-          <section id="contacts" className="contacts container pt-25">
+          <section id="contacts" 
+          className=" container  pt-15">
             <div className="contacts-header text-center">
               <h3 className="font-bold text-2xl">Get In Touch</h3>
-              <p className="my-4">
+              <p className="my-4 px-2">
                 Have a project in mind? Let's discuss how we can work together
                 to bring your ideas to life.
               </p>
             </div>
 
-            <div className="contacts-main mt-10 border border-slate-500 rounded-2xl p-3.5 flex justify-between ">
-              <div className="main-left  w-1/2">
+            <div className=" 
+            mt-10 border border-slate-500 rounded-2xl p-3.5 flex   flex-col 
+            sm:flex-row justify-between 
+            ">
+              <div className="main-left 
+              mb-5 border-b
+              sm:border-b-0
+              ">
                 <h4 className="text-2xl mb-4">Contact Information</h4>
 
                 <div className="left-content">
+
                   <a
                     href="mailto:abdumajidovabdurashid572@gmail.com"
                       rel="noopener noreferrer"
                     className="
-            flex
-            items-center
-            mt-8
-            "
-                  >
-                    <div className="icon bg-slate-700 p-2 rounded-full  mr-4">
+                        flex
+                        items-center
+                        mt-2
+                        "
+                       >
+                    <div className="icon bg-slate-700 p-2 rounded-full  mr-2">
                       <MdEmail size={30} />
                     </div>
                     <div className="main-title">
@@ -587,7 +621,10 @@ const Home = () => {
                 <div className="left-bottom my-4">
                   <h4 className="font-bold pt-2">Connect With Me</h4>
 
-                  <div className="bottom-links w-1/2 flex justify-between items-center my-2">
+                  <div className="bottom-links 
+                  w-[80%] flex justify-between items-center my-2
+                  sm:w-2/3
+                  ">
                     <a
                       href="https://github.com/ArawidInCoding100494"
                       target="_blank"
@@ -642,10 +679,10 @@ const Home = () => {
 
               <div
                 className="main-right 
-              pl-3
-              w-1/2
-              "
-              >
+                    pl-3
+                    mt-3
+                    "
+                    >
                 <h4 className=" text-2xl">Send Me a Message</h4>
 
                 <form

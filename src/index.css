@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 
 
 .container{
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
 }
 
 html {
   scroll-behavior: smooth;
-}
+}   
