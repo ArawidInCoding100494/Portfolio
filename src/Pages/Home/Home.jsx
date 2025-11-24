@@ -1,6 +1,3 @@
-
-
-
 import photo from "../../../public/images/photo.jpg";
 import akaM from "../../../public/images/akaM.png";
 import articles from "../../../public/images/articles.jpg";
@@ -14,8 +11,64 @@ import { LuGithub } from "react-icons/lu";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
+import { useState } from "react";
+// import { FaTelegramPlane } from "react-icons/fa";
 
 const Home = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // ------------- TELEGRAM BOT CONFIG -------------
+  const BOT_TOKEN = "8562172346:AAF4hcRihHNiGlJAiycMHd8ynsHToZEFkuE";
+  const CHAT_ID = "117340626";
+  const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  // handle change
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // handle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const text = `
+📩 Yangi xabar!
+👤 Name: ${formData.name}
+👤 Surname: ${formData.surname}
+📧 Email: ${formData.email}
+📞 Phone: ${formData.phone}
+💬 Message: ${formData.message}
+`;
+
+    await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text,
+      }),
+    });
+
+    // alert("Yuborildi! ✔️");
+
+    setFormData({
+      name: "",
+      surname: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
   return (
     <div className="">
       <div
@@ -29,11 +82,11 @@ const Home = () => {
         "
       >
         <header className=" fixed top-0 left-0 w-full z-30 bg-slate-500 sm:px-15 ">
-
-          <div className="
+          <div
+            className="
           text-center 
-          sm:flex justify-between py-2.5 capitalize font-bold text-2xl container">
-
+          sm:flex justify-between py-2.5 capitalize font-bold text-2xl container"
+          >
             <div className="left">
               <h2 className="sm:text-3xl">abdurashid.dev</h2>
             </div>
@@ -50,8 +103,8 @@ const Home = () => {
         </header>
 
         <main className="container py-8">
-
-          <section id="hero"
+          <section
+            id="hero"
             className="hero 
                 flex 
                 flex-col
@@ -68,10 +121,12 @@ const Home = () => {
               abdumajidov abdurashid
             </h2>
 
-            <p className="  
+            <p
+              className="  
             p-3 text-center text-[15px] mb-3 
             sm:w-[55%] text-[18px]
-            ">
+            "
+            >
               I’m Abdurashid, a frontend developer focused on building modern
               and responsive web applications. Check out my projects below or
               get in touch to collaborate.
@@ -93,28 +148,34 @@ const Home = () => {
             </div>
           </section>
 
-          <section id="about"
+          <section
+            id="about"
             className="about 
             flex-col items-center
              sm:flex flex-row
-          ">
+          "
+          >
             <div className="left  w-full p-3">
               <h3 className="capitalize my-3 font-bold text-3xl">about me</h3>
 
-              <p className="
+              <p
+                className="
               my-4 py-2 text-[14px] 
               sm:text-[18px]
-              ">
+              "
+              >
                 I'm a passionate Frontend Developer with a strong foundation in
                 HTML, CSS, JavaScript, TypeScript, React, and Next.js. I love
                 building clean, fast, and user-friendly web applications that
                 deliver great digital experiences.
               </p>
 
-              <p className="
+              <p
+                className="
               my-4 text-[14px]
               sm:text-[18px]
-              ">
+              "
+              >
                 With experience in team leadership and a focus on both code
                 quality and design aesthetics, I bring a balanced approach to
                 every project. I specialize in crafting responsive interfaces,
@@ -188,16 +249,18 @@ const Home = () => {
             </div>
 
             <div className="right mt-5  h-full w-full flex justify-center">
-              <img className="
+              <img
+                className="
               rounded-3xl w-80 
               sm:w-110 
-              " src={photo} alt="" />
+              "
+                src={photo}
+                alt=""
+              />
             </div>
           </section>
 
-          <section id="myProjects" 
-          className=" h-full  py-5 ">
-
+          <section id="myProjects" className=" h-full  py-5 ">
             <h1 className=" text-center capitalize font-bold text-3xl pt-10 ">
               my projects
             </h1>
@@ -207,12 +270,14 @@ const Home = () => {
               technologies.
             </p>
 
-            <div className="cards  
+            <div
+              className="cards  
             h-full p-3  mt-5  grid grid-cols-1 gap-2.5 
             sm:grid-cols-3
-            ">
-
-              <a className="card 
+            "
+            >
+              <a
+                className="card 
             border 
             border-slate-500 
             rounded-2xl
@@ -278,7 +343,8 @@ const Home = () => {
                 </div>
               </a>
 
-              <a className="card 
+              <a
+                className="card 
             border 
             border-slate-500 
             rounded-2xl
@@ -343,7 +409,8 @@ const Home = () => {
                 </div>
               </a>
 
-              <a className="card 
+              <a
+                className="card 
             border 
             border-slate-500 
             rounded-2xl
@@ -409,7 +476,8 @@ const Home = () => {
                 </div>
               </a>
 
-              <a className="card 
+              <a
+                className="card 
             border 
             border-slate-500 
             rounded-2xl
@@ -543,8 +611,7 @@ const Home = () => {
             </div>
           </section>
 
-          <section id="contacts" 
-          className=" container  pt-15">
+          <section id="contacts" className=" container  pt-15">
             <div className="contacts-header text-center">
               <h3 className="font-bold text-2xl">Get In Touch</h3>
               <p className="my-4 px-2">
@@ -553,27 +620,30 @@ const Home = () => {
               </p>
             </div>
 
-            <div className=" 
+            <div
+              className=" 
             mt-10 border border-slate-500 rounded-2xl p-3.5 flex   flex-col 
             sm:flex-row justify-between 
-            ">
-              <div className="main-left 
+            "
+            >
+              <div
+                className="main-left 
               mb-5 border-b
               sm:border-b-0
-              ">
+              "
+              >
                 <h4 className="text-2xl mb-4">Contact Information</h4>
 
                 <div className="left-content">
-
                   <a
                     href="mailto:abdumajidovabdurashid572@gmail.com"
-                      rel="noopener noreferrer"
+                    rel="noopener noreferrer"
                     className="
                         flex
                         items-center
                         mt-2
                         "
-                       >
+                  >
                     <div className="icon bg-slate-700 p-2 rounded-full  mr-2">
                       <MdEmail size={30} />
                     </div>
@@ -602,8 +672,8 @@ const Home = () => {
 
                   <a
                     href="https://maps.app.goo.gl/uxcDYvKdhBSeygmJA"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="
                       flex
                       items-center
@@ -623,10 +693,12 @@ const Home = () => {
                 <div className="left-bottom my-4">
                   <h4 className="font-bold pt-2">Connect With Me</h4>
 
-                  <div className="bottom-links 
+                  <div
+                    className="bottom-links 
                   w-[80%] flex justify-between items-center my-2
                   sm:w-2/3
-                  ">
+                  "
+                  >
                     <a
                       href="https://github.com/ArawidInCoding100494"
                       target="_blank"
@@ -666,7 +738,6 @@ const Home = () => {
                       </div>
                     </a>
 
-
                     <a
                       href="https://t.me/abdurashid_126"
                       rel="noopener noreferrer"
@@ -684,10 +755,74 @@ const Home = () => {
                     pl-3
                     mt-3
                     "
-                    >
+              >
                 <h4 className=" text-2xl">Send Me a Message</h4>
 
                 <form
+                  onSubmit={handleSubmit}
+                  className="w-full mt-3.5 flex flex-col gap-4"
+                >
+                  <label className="w-full flex items-center justify-between pt-3 pb-1">
+                    <input
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="border p-1 w-[48%] rounded-2xl capitalize outline-0"
+                      type="text"
+                      placeholder="your name"
+                      required
+                    />
+
+                    <input
+                      name="surname"
+                      value={formData.surname}
+                      onChange={handleChange}
+                      className="border p-1 w-[48%] rounded-2xl capitalize outline-0"
+                      type="text"
+                      placeholder="your surname"
+                      required
+                    />
+                  </label>
+
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="border w-full p-1 rounded-2xl capitalize outline-0"
+                    type="email"
+                    placeholder="your email"
+                    required
+                  />
+
+                  <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="border w-full rounded-2xl p-1 outline-0"
+                    type="number"
+                    placeholder="your phone number (optional)"
+                  />
+
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="border rounded-2xl p-1 outline-0"
+                    placeholder="your message"
+                    rows="3"
+                    required
+                  ></textarea>
+
+                  <button
+                    type="submit"
+                    className="border rounded-2xl flex justify-center items-center capitalize p-1 cursor-pointer"
+                  >
+                    send message{" "}
+                    <FaTelegramPlane style={{ marginLeft: "8px" }} />
+                  </button>
+                </form>
+
+                {/* <form
                   className="
                 w-full 
                 mt-3.5
@@ -761,7 +896,7 @@ const Home = () => {
                     send message{" "}
                     <FaTelegramPlane style={{ marginLeft: "8px" }} />
                   </button>
-                </form>
+                </form> */}
               </div>
             </div>
           </section>
