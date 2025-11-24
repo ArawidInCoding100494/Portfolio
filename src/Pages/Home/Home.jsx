@@ -1,4 +1,4 @@
-import photo from "../../../public/images/photo.jpg";
+import photto from "../../../public/images/photo.jpg";
 import akaM from "../../../public/images/akaM.png";
 import articles from "../../../public/images/articles.jpg";
 import createCrud from "../../../public/images/createCrud.jpg";
@@ -12,7 +12,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTelegramPlane } from "react-icons/fa";
 import { useState } from "react";
-// import { FaTelegramPlane } from "react-icons/fa";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -254,7 +253,7 @@ const Home = () => {
               rounded-3xl w-80 
               sm:w-110 
               "
-                src={photo}
+                src={photto}
                 alt=""
               />
             </div>
