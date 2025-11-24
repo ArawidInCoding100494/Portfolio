@@ -1,4 +1,4 @@
-import photto from "../../../public/images/photo.jpg";
+import photto from "../../../public/images/photto.jpg";
 import akaM from "../../../public/images/akaM.png";
 import articles from "../../../public/images/articles.jpg";
 import createCrud from "../../../public/images/createCrud.jpg";
