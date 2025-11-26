@@ -101,7 +101,7 @@ const Home = () => {
           </div>
         </header>
 
-        <main className="container py-8">
+        <main className="container py-8 pb-24">
           <section
             id="hero"
             className="hero 
@@ -899,7 +899,29 @@ const Home = () => {
               </div>
             </div>
           </section>
+
+          <footer className=" fixed bottom-0 left-0 w-full z-30 bg-slate-500 sm:px-15 ">
+          <div
+            className="
+          text-center py-2.5 capitalize font-bold text-2xl
+          sm:flex justify-center "
+          >
+            <div className="left">
+              <h2 className="hidden text-3xl sm:block">abdurashid.dev</h2>
+            </div>
+
+            <div className="right w-full container  sm:hidden">
+              <nav className=" flex justify-between">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#myProjects">projects</a>
+                <a href="#contacts">Contacts</a>
+              </nav>
+            </div>
+          </div>
+        </footer>
         </main>
+        
       </div>
     </div>
   );
