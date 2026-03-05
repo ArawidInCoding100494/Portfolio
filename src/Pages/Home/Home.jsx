@@ -286,7 +286,7 @@ const Home = () => {
             inline-block 
             my-3
             "
-                href="https://aka-market5.vercel.app/"
+                href="https://aka-market-6.vercel.app/login"
                 target="_blank"
                 rel="noopener noreferrer"
               >
