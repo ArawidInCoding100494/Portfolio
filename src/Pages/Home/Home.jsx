@@ -70,7 +70,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <div
+      <section
         className=" home
         bg-gradient-to-br 
         from-slate-800 
@@ -337,7 +337,7 @@ const Home = () => {
                   </div>
 
                   <span className="absolute opacity-0 -left-16  -top-5 group-hover:opacity-100 bg-slate-900 p-1 rounded capitalize">
-                    loyiha haqida izoh
+                    bu loyiha texnikalar dokonida sotuvchilar uchun maxsus ishlab chiqilgan veb-ilova bo'lib, ularning mahsulotlarini samarali boshqarish imkonini beradi.
                   </span>
                 </div>
               </a>
@@ -486,7 +486,7 @@ const Home = () => {
             inline-block
             my-3 
             "
-                href="https://oner-market.vercel.app/"
+                href="https://aka-market-6.vercel.app/login"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -542,71 +542,6 @@ const Home = () => {
                 </div>
               </a>
 
-              {/* <a
-                className="card 
-            border 
-            border-slate-500 
-            rounded-2xl
-            cursor-pointer 
-            relative 
-            group 
-            inline-block 
-            "
-                href="https://aka-market5.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="top">
-                  <img className="rounded-t-2xl" src={akaM} alt="" />
-                </div>
-
-                <div className="down capitalize p-3">
-                  <h3 className="text-2xl my-3 ">Aka-Market</h3>
-
-                  <div
-                    className="notes-main 
-                        flex
-                        justify-between
-                        align-items: center
-                        my-2.5
-                        "
-                  >
-                    <h4 className=" inline-block p-1 px-2 rounded-2xl bg-slate-500  ">
-                      react js
-                    </h4>
-                    <h4 className=" inline-block p-1 px-2 rounded-2xl bg-slate-500  ">
-                      tailwind css
-                    </h4>
-                    <h4 className=" inline-block p-1 px-2 rounded-2xl bg-slate-500  ">
-                      sass
-                    </h4>
-                  </div>
-
-                  <div className="notes-down flex justify-between align-items: center">
-                    <h4 className="p-1 px-2 rounded-2xl bg-slate-500">
-                      web development
-                    </h4>
-
-                    <div
-                      className="notes-down-right  
-                      w-1/2 flex justify-between 
-                     "
-                    >
-                      <span className="p-1 px-2 rounded-2xl bg-slate-500">
-                        github
-                      </span>
-
-                      <span className="p-1 px-2 rounded-2xl bg-slate-500">
-                        demo
-                      </span>
-                    </div>
-                  </div>
-
-                  <span className="absolute opacity-0 -left-16  -top-5 group-hover:opacity-100 bg-slate-900 p-1 rounded capitalize">
-                    loyiha haqida izoh
-                  </span>
-                </div>
-              </a> */}
             </div>
           </section>
 
@@ -922,7 +857,7 @@ const Home = () => {
         </footer>
         </main>
         
-      </div>
+      </section>
     </div>
   );
 };
