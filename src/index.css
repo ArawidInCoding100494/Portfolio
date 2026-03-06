@@ -1,16 +1,36 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 /* @tailwind base;
 @tailwind components;
-@tailwind utilities; */
+ */
 
-
-
-.container{
-    width: 95%;
-    margin: 0 auto;
-}
-
-html {
+ @layer base {
+    html {
   scroll-behavior: smooth;
-}   
+} 
+  }
+
+ @layer components {
+
+  .container {
+        @apply w-[80%] mx-auto bg-gray-50 ;
+    }
+
+    .btn {
+        @apply  
+        capitalize
+        p-1 px-2 
+        rounded-xl 
+        border 
+        bg-white/10   border-black/20 hover:shadow-md
+    ;} 
+  }
+
+
+/* .container{
+    width: 90%;
+    margin: 0 auto;
+} */
+
+  
